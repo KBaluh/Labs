@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InternetAccessCalculation;
 
 namespace Lab3
 {
@@ -10,7 +7,10 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
+            ModulControl modulControl = new ModulControl();
 
+            //затримка
+            Console.ReadKey();
         }
     }
 }
