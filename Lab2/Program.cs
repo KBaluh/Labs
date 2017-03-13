@@ -12,7 +12,7 @@ namespace Lab2
 
             decimal costOfPowerPerWStation = decReader.Read("Введiть вартiсть пiдключення живлення на одну робочу станцiю: ");
             decimal costOfInternetPerWStation = decReader.Read("Введiть вартiсть пiдключення iнтернету на одну робочу станцiю: ");
-            int numberOfWStation = intReader.Read("Введiть число робочих станцiй: ");
+            int numberOfWStation = intReader.ReadRange("Введiть число робочих станцiй від {0} До {1}: ", 1, 100);
 
             //калькуляцiя заходу
             decimal costOfAccess = (costOfInternetPerWStation + costOfPowerPerWStation) * numberOfWStation;
