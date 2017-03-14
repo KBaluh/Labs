@@ -7,7 +7,7 @@
             return decimal.TryParse(strValue, out value);
         }
 
-        protected override bool ValidateRange(string strValue, int min, int max, out decimal value)
+        protected override bool ValidateRange(string strValue, decimal min, decimal max, out decimal value)
         {
             if (decimal.TryParse(strValue, out value))
             {

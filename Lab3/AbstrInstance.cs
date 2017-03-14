@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace InternetAccessCalculation
+﻿namespace InternetAccessCalculation
 {
     public abstract class AbstrInstance
     {

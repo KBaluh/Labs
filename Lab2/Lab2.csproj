@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AccessCalculation.cs" />
     <Compile Include="DataReaders\AbstractReader.cs" />
+    <Compile Include="DataReaders\ConsoleReader.cs" />
     <Compile Include="DataReaders\DecimalReader.cs" />
     <Compile Include="DataReaders\IntReader.cs" />
     <Compile Include="Program.cs" />

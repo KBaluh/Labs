@@ -1,4 +1,4 @@
-﻿using NumberWStationDoWhile; //подключение пространства имен NumberWStationDoWhile для доступа к его именам 
+﻿using System;
 
 namespace InternetAccessCalculation
 {
@@ -15,16 +15,14 @@ namespace InternetAccessCalculation
             internetCost.Run();
 
             //введення числа робочих станцiй
-            WStationNumberDoWhile wStationNumberDoWhile = new WStationNumberDoWhile();
+            WStationNumber wStationNumberDoWhile = new WStationNumber();
             wStationNumberDoWhile.Run();
 
             //калькуляцiя заходу
             AccessCost accessCost = new AccessCost(powerCost.СostOfPowerPerWStation, internetCost.СostOfInternetPerWStation, wStationNumberDoWhile.NumberOfWStation);
             accessCost.Run();
 
-            //виведення результату (передача об'єкту)
-            ShowAccessCost showAccessCost = new ShowAccessCost(accessCost);
-            showAccessCost.Run();
+            Console.WriteLine("Загальна вартiсть заходу: {0}", accessCost.CostOfAccess);
         }
     }
 }

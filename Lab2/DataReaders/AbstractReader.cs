@@ -17,7 +17,7 @@ namespace DataReaders
             return result;
         }
 
-        public T ReadRange(string formatText, int min, int max)
+        public T ReadRange(string formatText, T min, T max)
         {
             T result;
             string strValue = string.Empty;
@@ -31,6 +31,6 @@ namespace DataReaders
         }
 
         abstract protected bool Validate(string strValue, out T value);
-        abstract protected bool ValidateRange(string strValue, int min, int max, out T value);
+        abstract protected bool ValidateRange(string strValue, T min, T max, out T value);
     }
 }

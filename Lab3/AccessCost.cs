@@ -2,7 +2,7 @@
 {
     class AccessCost : AbstrInstance
     {
-        public decimal costOfAccess;
+        public decimal CostOfAccess { get; set; }
 
         private decimal costOfPowerPerWStation;
         private decimal costOfInternetPerWStation;
@@ -22,7 +22,7 @@
         protected override void Idle()
         {
             //калькуляцiя заходу
-            costOfAccess = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
+            CostOfAccess = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
             SetDone();
         }
         
