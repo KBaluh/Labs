@@ -1,7 +1,7 @@
 ﻿using System;
 using InternetAccessCalculation;
 
-namespace Lab5
+namespace Lab6
 {
     class Program
     {
