@@ -20,7 +20,7 @@ namespace InternetAccessCalculation
 
             //калькуляцiя заходу
             AccessCost accessCost = new AccessCost(powerCost.СostOfPowerPerWStation, internetCost.СostOfInternetPerWStation, wStationNumberDoWhile.NumberOfWStation);
-            accessCost.Run();
+            accessCost.Calc();
 
             Console.WriteLine("Загальна вартiсть заходу: {0}", accessCost.CostOfAccess);
         }

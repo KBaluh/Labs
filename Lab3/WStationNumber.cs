@@ -2,12 +2,13 @@
 
 namespace InternetAccessCalculation
 {
-    class WStationNumber : AbstrInstance
+    class WStationNumber
     {
         int maxWStation = 100;
         int minWStation = 10;
 
         private bool onceMore;
+        private bool isDone;
 
         private int numberOfWStation = 0;
 
@@ -29,13 +30,27 @@ namespace InternetAccessCalculation
             {
                 return numberOfWStation;
             }
-        } 
-
-        protected override void Init()
-        {
         }
 
-        protected override void Idle()
+        public void Run()
+        {
+            while (!Done())
+            {
+                Idle();
+            }
+        }
+
+        protected bool Done()
+        {
+            return isDone;
+        }
+
+        protected void SetDone()
+        {
+            isDone = true;
+        }
+
+        protected void Idle()
         {
             Console.Write("Введiть кiлькiсть рабочих станцiй вiд {0} до {1}: ", minWStation, maxWStation);
             string strNumberOfWStation = Console.ReadLine();
@@ -46,10 +61,6 @@ namespace InternetAccessCalculation
                 if (!onceMore)
                     SetDone();
             }
-        }
-        
-        protected override void CleanUp()
-        {
-        }    
+        }  
     }
 }

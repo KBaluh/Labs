@@ -2,7 +2,7 @@
 
 namespace InternetAccessCalculation
 {
-    public class PowerCost : AbstrInstance
+    public class PowerCost
     {
         bool onceMore = true;
 
@@ -31,12 +31,27 @@ namespace InternetAccessCalculation
             }
         }
 
-        protected override void Init()
+        public void Run()
         {
-
+            while (!Done())
+            {
+                Idle();
+            }
         }
-        
-        protected override void Idle()
+
+        private bool isDone;
+
+        protected bool Done()
+        {
+            return isDone;
+        }
+
+        protected void SetDone()
+        {
+            isDone = true;
+        }
+
+        protected void Idle()
         {
             Console.Write("Введiть вартiсть пiдключення живлення на одну робочу станцiю вiд {0} до {1}: ", minCost, maxCost);
             string strCostOfPowerPerWStation = Console.ReadLine();
@@ -47,10 +62,6 @@ namespace InternetAccessCalculation
                 if (!onceMore)
                     SetDone();
             }
-        }
-
-        protected override void CleanUp()
-        {
-        }    
+        }   
     }
 }

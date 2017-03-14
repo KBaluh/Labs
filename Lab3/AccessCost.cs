@@ -1,6 +1,6 @@
 ﻿namespace InternetAccessCalculation
 {
-    class AccessCost : AbstrInstance
+    class AccessCost
     {
         public decimal CostOfAccess { get; set; }
 
@@ -14,20 +14,11 @@
             this.costOfInternetPerWStation = costOfInternetPerWStation;
             this.numberOfWStation = numberOfWStation;
         }
-
-        protected override void Init()
-        {
-        }
         
-        protected override void Idle()
+        public void Calc()
         {
             //калькуляцiя заходу
             CostOfAccess = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
-            SetDone();
-        }
-        
-        protected override void CleanUp()
-        {
-        }            
+        }        
     }
 }
