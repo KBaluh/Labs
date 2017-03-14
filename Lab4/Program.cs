@@ -1,13 +1,13 @@
 ﻿using System;
 using InternetAccessCalculation;
 
-namespace Lab3
+namespace Lab4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ModulControl modulControl = new ModulControl();
+            ModuleControl moduleControl = new ModuleControl();
 
             //затримка
             Console.ReadKey();

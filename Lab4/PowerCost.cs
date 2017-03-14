@@ -16,7 +16,9 @@ namespace InternetAccessCalculation
             set
             {
                 if (value < minCost || value > maxCost)
+                {
                     onceMore = true;
+                }
                 else
                 {
                     onceMore = false;
@@ -28,27 +30,18 @@ namespace InternetAccessCalculation
                 return costOfPowerPerWStation;
             }
         }
-        
-        StrCheckDecimal strCheckDecimal;
 
-        protected override void Init()
-        {
-            strCheckDecimal = new StrCheckDecimal();
-        }
-        
         protected override void Idle()
         {
             Console.Write("Введiть вартiсть пiдключення живлення на одну робочу станцiю вiд {0} до {1}: ", minCost, maxCost);
             string strCostOfPowerPerWStation = Console.ReadLine();
-            strCostOfPowerPerWStation = strCheckDecimal.CheckStrDecimal(strCostOfPowerPerWStation, maxCost);
-            СostOfPowerPerWStation = Convert.ToDecimal(strCostOfPowerPerWStation);
-            if (!onceMore)
-                SetDone();
+            decimal result;
+            if (decimal.TryParse(strCostOfPowerPerWStation, out result))
+            {
+                СostOfPowerPerWStation = result;
+                if (!onceMore)
+                    SetDone();
+            }
         }
-
-        protected override void CleanUp()
-        {
-            Console.WriteLine("Выход");
-        }    
     }
 }

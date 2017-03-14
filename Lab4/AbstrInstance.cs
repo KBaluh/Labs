@@ -1,14 +1,10 @@
-﻿using System;
-
-namespace InternetAccessCalculation
+﻿namespace InternetAccessCalculation
 {
     public abstract class AbstrInstance
     {
         private bool isDone = false;
 
-        protected abstract void Init();
         protected abstract void Idle();
-        protected abstract void CleanUp();
 
         protected void SetDone()
         {
@@ -22,10 +18,8 @@ namespace InternetAccessCalculation
 
         public void Run()
         {
-            Init();
             while (!Done())
                 Idle();
-            CleanUp();
         }
     }
 }
