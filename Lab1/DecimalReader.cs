@@ -13,7 +13,7 @@ namespace Lab1
                 Console.Write(text);
                 strValue = Console.ReadLine();
             }
-            while (!Decimal.TryParse(strValue, out result));
+            while (!decimal.TryParse(strValue, out result));
             return result;
         }
     }
