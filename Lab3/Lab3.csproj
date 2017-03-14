@@ -45,7 +45,7 @@
     <Compile Include="AbstrInstance.cs" />
     <Compile Include="AccessCost.cs" />
     <Compile Include="InternetCost.cs" />
-    <Compile Include="ModulControl.cs" />
+    <Compile Include="ModuleControl.cs" />
     <Compile Include="PowerCost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,7 +7,7 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            ModulControl modulControl = new ModulControl();
+            ModuleControl modulControl = new ModuleControl();
 
             //затримка
             Console.ReadKey();

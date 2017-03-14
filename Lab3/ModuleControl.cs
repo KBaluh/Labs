@@ -2,9 +2,9 @@
 
 namespace InternetAccessCalculation
 {
-    class ModulControl
+    class ModuleControl
     {
-        public ModulControl()
+        public ModuleControl()
         {
             //введення вартостi пiдключення живлення на одну робочу станцiю
             PowerCost powerCost = new PowerCost();
