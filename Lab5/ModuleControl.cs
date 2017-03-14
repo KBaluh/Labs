@@ -8,19 +8,23 @@ namespace InternetAccessCalculation
         {
             //введення вартостi пiдключення живлення на одну робочу станцiю
             PowerCost powerCost = new PowerCost();
-            powerCost.Run();
+            InstanceRunner powerCostInst = new InstanceRunner(powerCost);
+            powerCostInst.Run();
 
             //введення вартостi пiдключення iнтернету на одну робочу станцiю
             InternetCost internetCost = new InternetCost();
-            internetCost.Run();
+            InstanceRunner internetCostInst = new InstanceRunner(internetCost);
+            internetCostInst.Run();
 
             //введення числа робочих станцiй
-            WStationNumber wStationNumberDoWhile = new WStationNumber();
-            wStationNumberDoWhile.Run();
+            WStationNumber wStation = new WStationNumber();
+            InstanceRunner wStationInst = new InstanceRunner(wStation);
+            wStationInst.Run();
 
             //калькуляцiя заходу
-            AccessCost accessCost = new AccessCost(powerCost.СostOfPowerPerWStation, internetCost.СostOfInternetPerWStation, wStationNumberDoWhile.NumberOfWStation);
-            accessCost.Run();
+            AccessCost accessCost = new AccessCost(powerCost.СostOfPowerPerWStation, internetCost.СostOfInternetPerWStation, wStation.NumberOfWStation);
+            InstanceRunner accessCostInst = new InstanceRunner(accessCost);
+            accessCostInst.Run();
 
             Console.WriteLine("Загальна вартiсть заходу: {0}", accessCost.CostOfAccess);
         }
