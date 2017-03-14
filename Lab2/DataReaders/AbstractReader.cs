@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab2.Dut.Readers
+namespace DataReaders
 {
     public abstract class AbstractReader<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace Lab2.Dut.Readers
+﻿namespace DataReaders
 {
     class DecimalReader : AbstractReader<decimal>
     {
