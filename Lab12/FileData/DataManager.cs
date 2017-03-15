@@ -8,6 +8,7 @@ namespace FileData
         protected string FilePath { get; set; }
 
         public event EventHandler<DataWriteEvent> OnDataWrite;
+        public delegate void WriteData(BinaryWriter bw);
 
         public DataManager(string filePath)
         {
@@ -24,8 +25,13 @@ namespace FileData
                 BinaryWriter bw = new BinaryWriter(fs);
 
                 //вызовем перегрузку метода для записи данных в поток
-                OnWrite(bw);
+                //OnWrite(bw);
 
+                // використання делегату
+                WriteData wd = OnWrite;
+                wd(bw);
+
+                // використання події
                 OnDataWrite?.Invoke(this, new DataWriteEvent { Writer = bw });
 
                 //сохраним данные из буфера на диск
