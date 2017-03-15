@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09", "Lab9\Lab09.csproj"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab10", "Lab10\Lab10.csproj", "{C35EC48F-18B0-4057-8C77-446BCE24469B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab11", "Lab11\Lab11.csproj", "{D353071F-B98F-43B9-89E3-93CF10BD7535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{C35EC48F-18B0-4057-8C77-446BCE24469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C35EC48F-18B0-4057-8C77-446BCE24469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C35EC48F-18B0-4057-8C77-446BCE24469B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D353071F-B98F-43B9-89E3-93CF10BD7535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D353071F-B98F-43B9-89E3-93CF10BD7535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D353071F-B98F-43B9-89E3-93CF10BD7535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D353071F-B98F-43B9-89E3-93CF10BD7535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
