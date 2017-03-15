@@ -12,7 +12,7 @@ namespace InternetAccessCalculation
             clients = new List<Client>
             {
                 new Client { Name = "ЧП Пупкiн", ClientType = ClientType.New },
-                new Client { Name = "ООО Рошен", ClientType = ClientType.Regular },
+                new Client { Name = "ООО Велика Компанiя", ClientType = ClientType.Regular },
                 new Client { Name = "Просто команiя", ClientType = ClientType.VIP },
                 new Client { Name = "Автопром", ClientType = ClientType.VIP }
             };

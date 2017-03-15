@@ -21,7 +21,7 @@ namespace InternetAccessCalculation
             decimal amount = 0;
 
             ClientData data = new ClientData();
-            var clients = data.GetAll();
+            var clients = data.GetByType(ClientType.Regular);
             foreach (var client in clients)
             {
                 //калькуляцiя заходу
