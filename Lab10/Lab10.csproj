@@ -43,12 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstrInstance.cs" />
+    <Compile Include="InstanceRunner.cs" />
     <Compile Include="InternetAccessCalculation\AccessCost.cs" />
     <Compile Include="Client\Client.cs" />
     <Compile Include="Client\ClientData.cs" />
     <Compile Include="Client\ClientType.cs" />
     <Compile Include="Client\ClientTypeReader.cs" />
-    <Compile Include="InternetAccessCalculation\InterfaceInstance.cs" />
+    <Compile Include="InterfaceInstance.cs" />
     <Compile Include="InternetAccessCalculation\InternetCost.cs" />
     <Compile Include="InternetAccessCalculation\ModuleControl.cs" />
     <Compile Include="Order\Order.cs" />
