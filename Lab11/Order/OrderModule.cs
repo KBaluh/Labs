@@ -28,6 +28,9 @@ namespace InternetAccessCalculation
             order.Name = name;
             order.StationNumber = wStation.NumberOfWStation;
 
+            WStationData stationData = new WStationData(wStation);
+            stationData.Write();
+
             SetDone();
         }
     }

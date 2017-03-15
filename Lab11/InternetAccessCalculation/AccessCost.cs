@@ -21,7 +21,7 @@
         {
             decimal amount = 0;
 
-            var clients = clientData.GetByType(ClientType.Regular);
+            var clients = clientData.GetAll();
             foreach (Client client in clients)
             {
                 var discount = GetClientDiscount(client.ClientType);
