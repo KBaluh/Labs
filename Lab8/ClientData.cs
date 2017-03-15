@@ -11,10 +11,10 @@ namespace InternetAccessCalculation
         {
             clients = new List<Client>
             {
-                new Client { Name = "ЧП Пупкiн", ClientType = ClientType.New },
-                new Client { Name = "ООО Велика Компанiя", ClientType = ClientType.Regular },
-                new Client { Name = "Просто команiя", ClientType = ClientType.VIP },
-                new Client { Name = "Автопром", ClientType = ClientType.VIP }
+                new Client { FirstName = "ЧП Пупкiн", ClientType = ClientType.New },
+                new Client { FirstName = "ООО Велика Компанiя", ClientType = ClientType.Regular },
+                new Client { FirstName = "Просто команiя", ClientType = ClientType.VIP },
+                new Client { FirstName = "Автопром", ClientType = ClientType.VIP }
             };
         }
 
@@ -25,7 +25,7 @@ namespace InternetAccessCalculation
 
         public List<Client> OrderByName()
         {
-            return clients.OrderBy(x => x.Name).ToList();
+            return clients.OrderBy(x => x.FirstName).ToList();
         }
 
         public List<Client> GetByType(ClientType type)

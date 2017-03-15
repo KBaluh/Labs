@@ -51,6 +51,8 @@
     <Compile Include="InterfaceInstance.cs" />
     <Compile Include="InternetCost.cs" />
     <Compile Include="ModuleControl.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderModule.cs" />
     <Compile Include="PowerCost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

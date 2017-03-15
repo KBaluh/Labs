@@ -4,23 +4,42 @@
     {
         public decimal CostOfAccess { get; set; }
 
-        private decimal costOfPowerPerWStation;
-        private decimal costOfInternetPerWStation;
-        private int numberOfWStation;
-        private ClientType clientType;
+        private PowerCost power;
+        private InternetCost internet;
+        private Order order;
+        private ClientData clientData;
 
-        public AccessCost(decimal costOfPowerPerWStation, decimal costOfInternetPerWStation, int numberOfWStation, ClientType clientType)
+        public AccessCost(PowerCost power, InternetCost internet, Order order)
         {
-            this.costOfPowerPerWStation = costOfPowerPerWStation;
-            this.costOfInternetPerWStation = costOfInternetPerWStation;
-            this.numberOfWStation = numberOfWStation;
-            this.clientType = clientType;
+            this.power = power;
+            this.internet = internet;
+            this.order = order;
+            clientData = new ClientData();
         }
 
         public override void Idle()
         {
+            decimal amount = 0;
+
+            var clients = clientData.GetByType(ClientType.Regular);
+            foreach (Client client in clients)
+            {
+                var discount = GetClientDiscount(client.ClientType);
+
+                //калькуляцiя заходу
+                var value = (power.СostOfPowerPerWStation + internet.СostOfInternetPerWStation) * order.StationNumber;
+                amount += value - value * discount;
+            }
+
+            CostOfAccess = amount;
+
+            SetDone();
+        }
+
+        private decimal GetClientDiscount(ClientType type)
+        {
             decimal discount = 0;
-            switch (clientType)
+            switch (type)
             {
                 case ClientType.New:
                     discount = 0.5M;
@@ -32,11 +51,7 @@
                     discount = 0.15M;
                     break;
             }
-
-            //калькуляцiя заходу
-            var value = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
-            CostOfAccess = value - value * discount;
-            SetDone();
+            return discount;
         }
     }
 }

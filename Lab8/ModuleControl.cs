@@ -14,23 +14,13 @@ namespace InternetAccessCalculation
             InternetCost internetCost = new InternetCost();
             internetCost.Run();
 
-            //введення числа робочих станцiй
-            WStationNumber wStation = new WStationNumber();
-            wStation.Run();
+            OrderModule orderModule = new OrderModule();
+            orderModule.Run();
 
-            decimal amount = 0;
+            AccessCost accessCost = new AccessCost(powerCost, internetCost, orderModule.order);
+            accessCost.Run();
 
-            ClientData data = new ClientData();
-            var clients = data.GetByType(ClientType.Regular);
-            foreach (var client in clients)
-            {
-                //калькуляцiя заходу
-                AccessCost accessCost = new AccessCost(powerCost.СostOfPowerPerWStation, internetCost.СostOfInternetPerWStation, wStation.NumberOfWStation, client.ClientType);
-                accessCost.Run();
-                amount += accessCost.CostOfAccess;
-            }
-
-            Console.WriteLine("Загальна вартiсть заходу: {0}", amount);
+            Console.WriteLine("Загальна вартiсть заходу: {0}", accessCost.CostOfAccess);
         }
     }
 }
