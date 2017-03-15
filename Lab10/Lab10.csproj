@@ -43,20 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstrInstance.cs" />
-    <Compile Include="AccessCost.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientData.cs" />
-    <Compile Include="ClientType.cs" />
-    <Compile Include="ClientTypeReader.cs" />
-    <Compile Include="InterfaceInstance.cs" />
-    <Compile Include="InternetCost.cs" />
-    <Compile Include="ModuleControl.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderModule.cs" />
-    <Compile Include="PowerCost.cs" />
+    <Compile Include="InternetAccessCalculation\AccessCost.cs" />
+    <Compile Include="Client\Client.cs" />
+    <Compile Include="Client\ClientData.cs" />
+    <Compile Include="Client\ClientType.cs" />
+    <Compile Include="Client\ClientTypeReader.cs" />
+    <Compile Include="InternetAccessCalculation\InterfaceInstance.cs" />
+    <Compile Include="InternetAccessCalculation\InternetCost.cs" />
+    <Compile Include="InternetAccessCalculation\ModuleControl.cs" />
+    <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\OrderModule.cs" />
+    <Compile Include="InternetAccessCalculation\PowerCost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WStationNumber.cs" />
+    <Compile Include="InternetAccessCalculation\WStationNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
