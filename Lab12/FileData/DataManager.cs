@@ -7,6 +7,8 @@ namespace FileData
     {
         protected string FilePath { get; set; }
 
+        public event EventHandler<DataWriteEvent> OnDataWrite;
+
         public DataManager(string filePath)
         {
             FilePath = filePath;
@@ -23,6 +25,8 @@ namespace FileData
 
                 //вызовем перегрузку метода для записи данных в поток
                 OnWrite(bw);
+
+                OnDataWrite?.Invoke(this, new DataWriteEvent { Writer = bw });
 
                 //сохраним данные из буфера на диск
                 bw.Flush();

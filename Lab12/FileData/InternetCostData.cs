@@ -12,14 +12,23 @@ namespace InternetAccessCalculation
             : base("InternetCostData.txt")
         {
             this.internetCost = internetCost;
+            OnDataWrite += InternetCostData_OnDataWrite;
+        }
+
+        private void InternetCostData_OnDataWrite(object sender, DataWriteEvent e)
+        {
+            string str = "СostOfInternetPerWStation";
+            decimal num = internetCost.СostOfInternetPerWStation;
+            e.Writer.Write(str);
+            e.Writer.Write(num);
         }
 
         protected override void OnWrite(BinaryWriter bw)
         {
-            string str = "СostOfInternetPerWStation";
+            /*string str = "СostOfInternetPerWStation";
             decimal num = internetCost.СostOfInternetPerWStation;
             bw.Write(str);
-            bw.Write(num);
+            bw.Write(num);*/
         }
 
         protected override void OnRead(BinaryReader br)

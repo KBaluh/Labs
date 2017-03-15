@@ -56,6 +56,7 @@
     <Compile Include="DataReaders\RangeReader.cs" />
     <Compile Include="DataReaders\StrReader.cs" />
     <Compile Include="FileData\DataManager.cs" />
+    <Compile Include="FileData\DataWriteEvent.cs" />
     <Compile Include="FileData\InternetCostData.cs" />
     <Compile Include="FileData\PowerCostData.cs" />
     <Compile Include="FileData\WStationData.cs" />
