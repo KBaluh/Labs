@@ -14,7 +14,7 @@
             this.power = power;
             this.internet = internet;
             this.order = order;
-            clientData = new ClientData();
+            clientData = ClientData.Instance;
         }
 
         public override void Idle()
@@ -42,7 +42,7 @@
             switch (type)
             {
                 case ClientType.New:
-                    discount = 0.5M;
+                    discount = 0.05M;
                     break;
                 case ClientType.Regular:
                     discount = 0.10M;

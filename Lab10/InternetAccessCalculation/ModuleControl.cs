@@ -14,6 +14,9 @@ namespace InternetAccessCalculation
             InternetCost internetCost = new InternetCost();
             internetCost.Run();
 
+            ClientReader clientReader = new ClientReader();
+            clientReader.Run();
+
             OrderModule orderModule = new OrderModule();
             orderModule.Run();
 

@@ -10,6 +10,8 @@ namespace InternetAccessCalculation
 
         public DateTime Birthday { get; set; }
 
+        public int PhoneNumber { get; set; }
+
         public ClientType ClientType { get; set; }
 
         public override string ToString()

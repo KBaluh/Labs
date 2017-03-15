@@ -43,6 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstrInstance.cs" />
+    <Compile Include="Client\ClientReader.cs" />
+    <Compile Include="DataReaders\AbstractReader.cs" />
+    <Compile Include="DataReaders\ConsoleReader.cs" />
+    <Compile Include="DataReaders\DateReader.cs" />
+    <Compile Include="DataReaders\DecimalReader.cs" />
+    <Compile Include="DataReaders\IntReader.cs" />
+    <Compile Include="DataReaders\RangeReader.cs" />
+    <Compile Include="DataReaders\StrReader.cs" />
     <Compile Include="InstanceRunner.cs" />
     <Compile Include="InternetAccessCalculation\AccessCost.cs" />
     <Compile Include="Client\Client.cs" />

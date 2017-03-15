@@ -10,13 +10,13 @@ namespace InternetAccessCalculation
 
         private ClientData()
         {
-            clients = new List<Client>
+            /*clients = new List<Client>
             {
                 new Client { FirstName = "ЧП Пупкiн", ClientType = ClientType.New },
                 new Client { FirstName = "ООО Велика Компанiя", ClientType = ClientType.Regular },
                 new Client { FirstName = "Просто команiя", ClientType = ClientType.VIP },
                 new Client { FirstName = "Автопром", ClientType = ClientType.VIP }
-            };
+            };*/
         }
 
         public static ClientData Instance
@@ -32,7 +32,12 @@ namespace InternetAccessCalculation
         }
         #endregion
 
-        private List<Client> clients;
+        private List<Client> clients = new List<Client>();
+
+        public void Add(Client client)
+        {
+            clients.Add(client);
+        }
 
         public List<Client> GetAll()
         {
