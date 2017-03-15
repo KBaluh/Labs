@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstrInstance.cs" />
     <Compile Include="AccessCost.cs" />
-    <Compile Include="InstanceRunner.cs" />
+    <Compile Include="ClientType.cs" />
+    <Compile Include="ClientTypeReader.cs" />
     <Compile Include="InterfaceInstance.cs" />
     <Compile Include="InternetCost.cs" />
     <Compile Include="ModuleControl.cs" />

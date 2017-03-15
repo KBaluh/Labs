@@ -2,13 +2,12 @@
 
 namespace InternetAccessCalculation
 {
-    class InternetCost : InterfaceInstance
+    class InternetCost : AbstrInstance
     {
         private decimal maxCost = 1000;
         private decimal minCost = 1;
 
         private bool onceMore;
-        private bool isDone;
 
         private decimal costOfInternetPerWStation;
 
@@ -32,11 +31,7 @@ namespace InternetAccessCalculation
             }
         }
 
-        public void Init()
-        {
-        }
-
-        public void Idle()
+        public override void Idle()
         {
             Console.Write("Введiть вартiсть пiдключення iнтернету на одну робочу станцiю вiд {0} до {1}: ", minCost, maxCost);
             string strCostOfInternetPerWStation = Console.ReadLine();
@@ -47,20 +42,6 @@ namespace InternetAccessCalculation
                 if (!onceMore)
                     SetDone();
             }
-        }
-
-        public void CleanUp()
-        {
-        }
-
-        public bool Done()
-        {
-            return isDone;
-        }
-
-        private void SetDone()
-        {
-            isDone = true;
         }
     }
 }

@@ -1,45 +1,42 @@
 ﻿namespace InternetAccessCalculation
 {
-    class AccessCost : InterfaceInstance
+    class AccessCost : AbstrInstance
     {
-        private bool isDone;
-
         public decimal CostOfAccess { get; set; }
 
         private decimal costOfPowerPerWStation;
         private decimal costOfInternetPerWStation;
         private int numberOfWStation;
+        private ClientType clientType;
 
-        public AccessCost(decimal costOfPowerPerWStation, decimal costOfInternetPerWStation, int numberOfWStation)
+        public AccessCost(decimal costOfPowerPerWStation, decimal costOfInternetPerWStation, int numberOfWStation, ClientType clientType)
         {
             this.costOfPowerPerWStation = costOfPowerPerWStation;
             this.costOfInternetPerWStation = costOfInternetPerWStation;
             this.numberOfWStation = numberOfWStation;
+            this.clientType = clientType;
         }
 
-        public void Idle()
+        public override void Idle()
         {
+            decimal discount = 0;
+            switch (clientType)
+            {
+                case ClientType.New:
+                    discount = 0.5M;
+                    break;
+                case ClientType.Regular:
+                    discount = 0.10M;
+                    break;
+                case ClientType.VIP:
+                    discount = 0.15M;
+                    break;
+            }
+
             //калькуляцiя заходу
-            CostOfAccess = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
+            var value = (costOfPowerPerWStation + costOfInternetPerWStation) * numberOfWStation;
+            CostOfAccess = value - value * discount;
             SetDone();
-        }
-
-        public void Init()
-        {
-        }
-
-        public void CleanUp()
-        {
-        }
-
-        public bool Done()
-        {
-            return isDone;
-        }
-
-        private void SetDone()
-        {
-            isDone = true;
         }
     }
 }
