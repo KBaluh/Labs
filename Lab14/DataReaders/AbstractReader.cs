@@ -10,7 +10,10 @@ namespace DataReaders
             string strValue = string.Empty;
             do
             {
-                Console.Write(text);
+                if (!string.IsNullOrEmpty(text))
+                {
+                    Console.Write(text);
+                }
                 strValue = Console.ReadLine();
             }
             while (!Validate(strValue, out result));

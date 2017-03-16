@@ -11,7 +11,7 @@ namespace InternetAccessCalculation
             powerCost.Run();
 
             PowerCostData powerData = new PowerCostData(powerCost);
-            await powerData.Write();
+            powerData.Write();
 
             //введення вартостi пiдключення iнтернету на одну робочу станцiю
             InternetCost internetCost = new InternetCost();

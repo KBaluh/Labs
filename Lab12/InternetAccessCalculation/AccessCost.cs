@@ -27,8 +27,8 @@
                 var discount = GetClientDiscount(client.ClientType);
 
                 //калькуляцiя заходу
-                var value = (power.СostOfPowerPerWStation + internet.СostOfInternetPerWStation) * order.StationNumber;
-                amount += value - value * discount;
+                var value = (power.СostOfPowerPerWStation + internet.СostOfInternetPerWStation) * order.StationNumber * discount;
+                amount = value;
             }
 
             CostOfAccess = amount;
@@ -42,13 +42,13 @@
             switch (type)
             {
                 case ClientType.New:
-                    discount = 0.05M;
+                    discount = 0.95M;
                     break;
                 case ClientType.Regular:
-                    discount = 0.10M;
+                    discount = 0.90M;
                     break;
                 case ClientType.VIP:
-                    discount = 0.15M;
+                    discount = 0.85M;
                     break;
             }
             return discount;

@@ -46,5 +46,11 @@ namespace DataReaders
         {
             return dateReader.Read(text);
         }
+
+        public string RegStr(string pattern, string text, string error = null)
+        {
+            RegexReader reader = new RegexReader(pattern, error);
+            return reader.Read(text);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using FileData;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace InternetAccessCalculation
 {
@@ -14,7 +15,7 @@ namespace InternetAccessCalculation
             this.powerCost = powerCost;
         }
 
-        protected override void OnWrite(BinaryWriter bw)
+        protected override async Task OnWrite(BinaryWriter bw)
         {
             string str = "СostOfPowerPerWStation";
             decimal num = powerCost.СostOfPowerPerWStation;

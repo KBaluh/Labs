@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace FileData
@@ -9,7 +10,7 @@ namespace FileData
         protected string FilePath { get; set; }
 
         public event EventHandler<DataWriteEvent> OnDataWrite;
-        public delegate void WriteData(BinaryWriter bw);
+        //public delegate void WriteData(BinaryWriter bw);
 
         public DataManager(string filePath)
         {
@@ -26,11 +27,11 @@ namespace FileData
                 BinaryWriter bw = new BinaryWriter(fs);
 
                 //вызовем перегрузку метода для записи данных в поток
-                await OnWrite(bw);
+                OnWrite(bw);
 
                 // використання делегату
-                WriteData wd = OnWrite;
-                wd(bw);
+                //WriteData wd = OnWrite;
+                //wd(bw);
 
                 // використання події
                 OnDataWrite?.Invoke(this, new DataWriteEvent { Writer = bw });
@@ -42,7 +43,10 @@ namespace FileData
             }
         }
 
-        protected abstract Task<void> OnWrite(BinaryWriter bw);
+        protected virtual Task OnWrite(BinaryWriter bw)
+        {
+            return Task.Run(() => null);
+        }
 
         public void Read()
         {

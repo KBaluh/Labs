@@ -1,6 +1,6 @@
 ﻿namespace InternetAccessCalculation
 {
-    public abstract class AbstrInstance : InterfaceInstance
+    public abstract class AbstrInstance
     {
         private bool isDone = false;
 
