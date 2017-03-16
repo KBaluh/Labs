@@ -54,6 +54,7 @@
     <Compile Include="DataReaders\DecimalReader.cs" />
     <Compile Include="DataReaders\IntReader.cs" />
     <Compile Include="DataReaders\RangeReader.cs" />
+    <Compile Include="DataReaders\RegexReader.cs" />
     <Compile Include="DataReaders\StrReader.cs" />
     <Compile Include="FileData\DataManager.cs" />
     <Compile Include="FileData\DataWriteEvent.cs" />
